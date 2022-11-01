@@ -5,7 +5,7 @@ const Header = () => {
     const mentuItems = <>
     
       <li className='font-semibold'><Link to='/'>Home</Link></li>
-      <li className='font-semibold'><Link to='/'>About</Link></li>
+      <li className='font-semibold'><Link to='/login'>Login</Link></li>
       <li className='font-semibold'><Link to='/'>Service</Link></li>
       <li className='font-semibold'><Link to='/'>Blog</Link></li>
       <li className='font-semibold'><Link to='/'>Contact</Link></li>
