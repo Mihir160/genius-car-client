@@ -1,7 +1,7 @@
 import React from 'react';
-import About from '../../About/About';
-import Banner from '../../Banner/Banner';
-import Services from '../../Services/Services';
+import About from '../../Home/About/About';
+import Banner from '../../Home/Banner/Banner';
+import Services from '../../Home/Services/Services';
 
 const Home = () => {
     return (
