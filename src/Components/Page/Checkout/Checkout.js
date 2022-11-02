@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { Authcontex } from '../../../context/Authprovider/Authprovider';
+import { AuthContext } from '../../../context/Authprovider/Authprovider';
 
 const Checkout = () => {
     const {_id,title, price} = useLoaderData()
-    const {user} = useContext(Authcontex)
+    const {user} = useContext(AuthContext)
 
     const handlePlaceOrder = event => {
         event.preventDefault();

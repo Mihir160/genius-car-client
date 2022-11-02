@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import img from '../../../assets/images/login/login.svg';
-import { Authcontex } from '../../../context/Authprovider/Authprovider';
+import { AuthContext } from '../../../context/Authprovider/Authprovider';
 const Login = () => {
-    const {login} = useContext(Authcontex)
+    const {login} = useContext(AuthContext)
     const handleLogin = event =>{
         event.preventDefault();
         const form = event.target;
