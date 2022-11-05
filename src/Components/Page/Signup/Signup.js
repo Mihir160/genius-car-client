@@ -2,6 +2,7 @@ import { fromJSON } from 'postcss';
 import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { setAuthToken } from '../../../api/auth';
 import img from '../../../assets/images/login/login.svg';
 import { AuthContext } from '../../../context/Authprovider/Authprovider';
 
@@ -18,6 +19,7 @@ const Signup = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            setAuthToken(user)
             form.reset()
         })
         .catch(err => console.error(err));
