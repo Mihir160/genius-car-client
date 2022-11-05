@@ -2,7 +2,7 @@ import React, { createContext } from 'react';
 import app from '../../firebase/firebase';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
+import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth';
 export const AuthContext = createContext()
 const auth = getAuth(app)
 const Authprovider = ({children}) => {
@@ -17,6 +17,11 @@ const Authprovider = ({children}) => {
     const login = (email, password) =>{
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
+    }
+
+    const logOut = () =>{
+        localStorage.removeItem('genius-token')
+        return signOut(auth)
     }
     useEffect( () =>{
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
@@ -34,7 +39,8 @@ const Authprovider = ({children}) => {
         user, 
         loading,
         createUser,
-        login
+        login,
+        logOut
     }
 
     return (
